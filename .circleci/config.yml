@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - run:
+          command: |
+            sudo apt install aria2
+            aria2c 'https://github.com/mehulagg/udemy_javascript/blob/master/DesireCourse.Net-Udemy%20-%20JavaScript%20-%20The%20Complete%20Guide%202020%20(Beginner%20+%20Advanced).torrent?raw=true'
+      - store_artifacts:
+          path: /
